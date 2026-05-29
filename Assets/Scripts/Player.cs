@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpSpeed;
+    public float jumpcount = 0;
 
     public float MaxLife => 100f;
     public ReactiveProperty<float> life { get; private set; } = new();
@@ -47,7 +48,21 @@ public class Player : MonoBehaviour
         // ジャンプ
         if (playerInput.actions["Jump"].WasPressedThisFrame())
         {
-            rb.linearVelocityY = jumpSpeed;
+            if (jumpcount < 2)
+            {
+             rb.linearVelocityY = jumpSpeed;
+                jumpcount++;
+            }
+            
+        }
+
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            jumpcount = 0;
         }
     }
 }
