@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpSpeed;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
     public float jumpcount = 0;
 
     public float MaxLife => 100f;
@@ -56,6 +58,11 @@ public class Player : MonoBehaviour
             
         }
 
+        if (playerInput.actions["Attack"].WasPressedThisFrame())
+        {
+            Shoot();
+        }
+
         
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,4 +72,38 @@ public class Player : MonoBehaviour
             jumpcount = 0;
         }
     }
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            firePoint.position,
+            Quaternion.identity);
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemies.Length == 0) return;
+
+        GameObject nearestEnemy = null;
+        float nearestDistance = Mathf.Infinity;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector2.Distance(
+                transform.position,
+                enemy.transform.position);
+
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null)
+        {
+            bullet.GetComponent<Bullet>().target =
+                nearestEnemy.transform;
+        }
+    }
+
 }

@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8420aa49346c32948a016ff38caa1ccf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c91964070eb03794b8c033b1bda877fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 6501049628807623457}
   - component: {fileID: 7890932251259525590}
   - component: {fileID: 537610639826932648}
-  - component: {fileID: 4181151170261699718}
+  - component: {fileID: -618551509920644535}
   m_Layer: 0
-  m_Name: Skysime
+  m_Name: Anglesime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,9 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e55edcf99acf6469ddad4cb586ea57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemycontroller
-  Speed: 2
-  damage: 5
---- !u!114 &4181151170261699718
+  Speed: 0.43
+  damage: 1197
+--- !u!114 &-618551509920644535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,4 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c65fefd73f71f479e04daca449e91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  Hp: 40
+  Hp: 1000

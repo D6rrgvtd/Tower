@@ -45,7 +45,7 @@ public class Spawner2D : MonoBehaviour
        
         float randomValue = Random.Range(0f, totalWeight);
 
-        // 3. ランダムな数値がどのプレハブの範囲にあるかを判定
+       
         float currentWeightSum = 0f;
         foreach (var data in spawnList)
         {
@@ -53,12 +53,12 @@ public class Spawner2D : MonoBehaviour
 
             if (randomValue <= currentWeightSum)
             {
-                // 選ばれたプレハブを生成
+                
                 if (data.prefab != null)
                 {
                     Instantiate(data.prefab, transform.position, transform.rotation);
                 }
-                break; // 生成したらループを抜ける
+                break; 
             }
         }
     }

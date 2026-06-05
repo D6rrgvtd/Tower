@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 6501049628807623457}
   - component: {fileID: 7890932251259525590}
   - component: {fileID: 537610639826932648}
+  - component: {fileID: 2999622446369985924}
   m_Layer: 0
   m_Name: Sime
   m_TagString: Enemy
@@ -203,3 +204,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemycontroller
   Speed: 2
   damage: 5
+--- !u!114 &2999622446369985924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112212100054190032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c65fefd73f71f479e04daca449e91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  Hp: 40
